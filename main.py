@@ -57,34 +57,26 @@ if __name__ == "__main__":
     print("1. Add Employee")
     print("2. Search Employee")
     print("3. Exit")
-    choice = input("Enter your choice: ")
-    if choice == "1":
-        add()
-    elif choice == "2":
-        search()
-    elif choice == "3":
-        exit()
-    else:
-        print("Invalid Choice")
+    choice = ""
+    while choice != "3":
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            add()
+        elif choice == "2":
+            search()
+        elif choice == "3":
+            print("Exit")
+        else:
+            print("Invalid choice")
 
-if __name__ == "__main__":
-    print("1. Add Employee")
-    print("2. Search Employee")
-    print("3. Exit")
-    choice = input("Enter your choice: ")
-    if choice == "1":
-        add()
-    elif choice == "2":
-        search()
-    elif choice == "3":
 
-        def display(self):
-            print("Name: ", self.name)
-            print("Age: ", self.age)
-            print("Salary: ", self.salary)
-            print("Rating: ", self.rating)
+        # def display(self):
+        #     print("Name: ", self.name)
+        #     print("Age: ", self.age)
+        #     print("Salary: ", self.salary)
+        #     print("Rating: ", self.rating)
 
-employees = []
+# employees = []
 
 
 # def add():
