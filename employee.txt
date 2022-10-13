@@ -1,3 +1,2 @@
-
-1234 Jonathan Montrose 40 1000000 10
-5678 Carol Baskins 45 10000 2
+23456 Carl Sagan           65 300000  08
+56789 Dave Matthews        45 20000   03
