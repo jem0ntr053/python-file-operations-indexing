@@ -13,13 +13,12 @@ class Employee:
 
 # store the employee information in a fixed-length record file.
 def add():
-    eid = input("Enter Employee ID: ")
-    name = input("Enter Name: ")
-    age = input("Enter Age: ")
-    salary = input("Enter Salary: ")
-    rating = input("Enter Rating: ")
+    eid = input("Enter Employee ID: ").ljust(5)
+    name = input("Enter Name: ").ljust(20)
+    age = input("Enter Age: ").ljust(2)
+    salary = input("Enter Salary: ").split().ljust(10)
+    rating = input("Enter Rating: ").split().ljust(2)
     Employee(name, age, salary, rating)
-    # emp.display()
     # write the employee information to the file
     with open("employee.txt", "a") as f:
         f.write(
@@ -49,8 +48,8 @@ def search():
                             print("Rating: ", line.split()[4])
                             break
                 break
-            else:
-                print("Not Found")
+        else:
+            print("Not Found")
 
 
 if __name__ == "__main__":
@@ -68,7 +67,6 @@ if __name__ == "__main__":
             print("Exit")
         else:
             print("Invalid choice")
-
 
         # def display(self):
         #     print("Name: ", self.name)
