@@ -1,2 +1,4 @@
 23456 Carl Sagan           65 300000  08
 56789 Dave Matthews        45 20000   03
+10230 Jean Grey            45 67000   06
+20131 Rhonda Montoya       38 250000  09

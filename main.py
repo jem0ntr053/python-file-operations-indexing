@@ -1,4 +1,9 @@
-# Name and title of the program
+__author__ = "Jonathan Montrose"
+__version__ = "1.0.1"
+__maintainer__ = "Jonathan Montrose"
+__email__ = "jem118@shsu.edu"
+
+# This program will allow the user to add, search, and delete employee records.
 
 
 class Employee:
@@ -9,7 +14,6 @@ class Employee:
         self.rating = rating
 
 
-# store the employee information in a fixed-length record file.
 def add():
     eid = input("Enter Employee ID: ").ljust(5)[:5]
     name = input("Enter Name: ").ljust(20)[:20]
@@ -27,8 +31,8 @@ def add():
         f.write(eid + " " + str(f.tell()) + "\n")
 
 
-# search the index file to find the record number of the employee record
-# and then use this record number to locate the employee record in the employee file.
+# implement search() to search for an employee record in the employee file using
+# the index file
 def search():
     search_eid: str = input("Enter Employee ID: ")
     with open("index.txt", "r") as f:
@@ -51,7 +55,8 @@ def search():
             print("Not Found")
 
 
-# implement delete() to delete an employee record from the employee file using the index file
+# implement delete() to delete an employee record from the employee file using
+# the index file
 def delete():
     delete_eid = input("Enter Employee ID: ")
     index = []
@@ -92,6 +97,7 @@ def delete():
             f.write(line)
 
 
+# Main function
 if __name__ == "__main__":
     print("Employee Record Management System")
     print("==================================")
@@ -99,6 +105,7 @@ if __name__ == "__main__":
     print("2. Search Employee")
     print("3. Delete Employee")
     print("4. Exit")
+    print("==================================")
     choice = ""
     while choice != "4":
         choice = input("Enter your choice: ")
