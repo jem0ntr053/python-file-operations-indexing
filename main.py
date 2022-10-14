@@ -1,6 +1,4 @@
-# implement add() to ask users to enter information about employee records,
-# including their EID, Name, Age, and Rating.  Create an index file at the same time by using EID as
-# primary key and RRN as reference.
+# Name and title of the program
 
 
 class Employee:
@@ -32,16 +30,16 @@ def add():
 # search the index file to find the record number of the employee record
 # and then use this record number to locate the employee record in the employee file.
 def search():
-    eid = input("Enter Employee ID: ")
+    search_eid: str = input("Enter Employee ID: ")
     with open("index.txt", "r") as f:
         for line in f:
-            if eid == line.split()[0]:
+            if search_eid == line.split()[0]:
                 print("Found")
                 rrn = line.split()[1]
                 print("RRN: ", rrn)
                 with open("employee.txt", "r") as f:
                     for line in f:
-                        if line.split()[0] == eid:
+                        if line.split()[0] == search_eid:
                             print("Employee ID: ", line.split()[0])
                             print("Name: ", line.split()[1])
                             print("Age: ", line.split()[2])
@@ -55,17 +53,17 @@ def search():
 
 # implement delete() to delete an employee record from the employee file using the index file
 def delete():
-    eid = input("Enter Employee ID: ")
+    delete_eid = input("Enter Employee ID: ")
     index = []
     with open("index.txt", "r") as f:
         for line in f:
-            if eid == line.split()[0]:
+            if delete_eid == line.split()[0]:
                 print("Found")
                 rrn = line.split()[1]
                 print("RRN: ", rrn)
                 with open("employee.txt", "r") as f:
                     for line in f:
-                        if line.split()[0] == eid:
+                        if line.split()[0] == delete_eid:
                             print("Employee ID: ", line.split()[0])
                             print("Name: ", line.split()[1])
                             print("Age: ", line.split()[2])
@@ -78,7 +76,7 @@ def delete():
 
     with open("index.txt", "r") as f:
         for line in f:
-            if eid != line.split()[0]:
+            if delete_eid != line.split()[0]:
                 index.append(line)
     with open("index.txt", "w") as f:
         for line in index:
@@ -87,7 +85,7 @@ def delete():
     employee = []
     with open("employee.txt", "r") as f:
         for line in f:
-            if eid != line.split()[0]:
+            if delete_eid != line.split()[0]:
                 employee.append(line)
     with open("employee.txt", "w") as f:
         for line in employee:
@@ -95,6 +93,8 @@ def delete():
 
 
 if __name__ == "__main__":
+    print("Employee Record Management System")
+    print("==================================")
     print("1. Add Employee")
     print("2. Search Employee")
     print("3. Delete Employee")
@@ -112,31 +112,3 @@ if __name__ == "__main__":
             print("Exit")
         else:
             print("Invalid choice")
-
-        # def display(self):
-        #     print("Name: ", self.name)
-        #     print("Age: ", self.age)
-        #     print("Salary: ", self.salary)
-        #     print("Rating: ", self.rating)
-
-# employees = []
-
-
-# def add():
-#     name = input("Enter name: ")
-#     age = input("Enter age: ")
-#     salary = input("Enter salary: ")
-#     rating = input("Enter rating: ")
-#     new_employee = Employee(name, age, salary, rating)
-#     employees.append(new_employee)
-
-
-# def display():
-#     for employee in employees:
-#         employee.display()
-
-
-# Press the green button in the gutter to run the script.
-# if __name__ == '__main__':
-#     add()
-#     display()
