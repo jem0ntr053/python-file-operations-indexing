@@ -1,3 +1,9 @@
+__author__ = "Jonathan Montrose"
+__version__ = "1.0.1"
+__maintainer__ = "Jonathan Montrose"
+__email__ = "jem118@shsu.edu"
+
+
 # Write a program to read two lists of names from two input files and then match
 # the names in the two lists using Co-sequential Match based on a single loop.
 # Output the names common to both the lists to an output file.
@@ -54,6 +60,4 @@ def cosequential_search():
 
 
 if __name__ == '__main__':
-
     cosequential_search()
-
