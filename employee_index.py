@@ -22,7 +22,7 @@ def add():
     rating = input("Enter Rating: ").ljust(2)[:2]
     Employee(name, age, salary, rating)
 
-    # write the employee information to the file in fixed-length record format
+    # write the employee information to the file
     with open("employee.txt", "a") as f:
         f.write(
             eid + " " + name + " " + age + " " + salary + " " + rating + "\n")
@@ -31,7 +31,7 @@ def add():
         f.write(eid + " " + str(f.tell()) + "\n")
 
 
-# implement search() to search for an employee record in the employee file using
+# search() to search for an employee record in the employee file using
 # the index file
 def search():
     search_eid: str = input("Enter Employee ID: ")
@@ -55,7 +55,7 @@ def search():
             print("Not Found")
 
 
-# implement delete() to delete an employee record from the employee file using
+# delete() to delete an employee record from the employee file using
 # the index file
 def delete():
     delete_eid = input("Enter Employee ID: ")
