@@ -2,6 +2,7 @@ __author__ = "Jonathan Montrose"
 __version__ = "1.0.1"
 __maintainer__ = "Jonathan Montrose"
 __email__ = "jem118@shsu.edu"
+__github_repository__ = "https://github.com/jem0ntr053/ISDesign-A03-index/tree/main"
 
 # This program will allow the user to add, search, and delete employee records.
 
